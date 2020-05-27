@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GameSuit</string>
+    <string name="game_suit">Game Suit</string>
+    <string name="logo">logo</string>
+    <string name="mulai">MULAI</string>
+    <string name="keluar">KELUAR</string>
+    <string name="batu">batu</string>
+    <string name="kertas">kertas</string>
+    <string name="gunting">gunting</string>
+    <string name="pemain_1">Pemain 1</string>
+    <string name="pemain2">Pemain 2</string>
+    <string name="input_nama_pemain_1">Input nama pemain 1</string>
+    <string name="input_nama_pemain_2">Input nama pemain 2</string>
+    <string name="pemain_1_menang">pemain 1 menang</string>
+    <string name="pemain_2_menang">pemain 2 menang</string>
+    <string name="draw">DRAW</string>
+    <string name="reset">reset</string>
+</resources>
