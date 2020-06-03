@@ -52,13 +52,14 @@ class AreaMain : AppCompatActivity() {
         gunting2.setOnClickListener {
             pilihanDua = "gunting"
             showResult()
+
         }
-        reset.setOnClickListener {
+        main_lagi.setOnClickListener {
             startNew()
         }
     }
 
-    fun showResult() {
+    private fun showResult() {
         if (pilihanSatu != "" && pilihanDua != "") {
             val control = Controler()
             val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
@@ -86,4 +87,6 @@ class AreaMain : AppCompatActivity() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.fade)
         batu1.startAnimation(animation)
     }
+
+
 }
