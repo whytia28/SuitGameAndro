@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -23,11 +23,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val moveIntent = Intent(this@MainActivity, AreaMain::class.java)
                 moveIntent.putExtra(
                     AreaMain.EXTRA_NAME1,
-                    inputpemain1.text.toString().toUpperCase()
+                    inputpemain1.text.toString().toUpperCase(Locale.ROOT)
                 )
                 moveIntent.putExtra(
                     AreaMain.EXTRA_NAME2,
-                    inputpemain2.text.toString().toUpperCase()
+                    inputpemain2.text.toString().toUpperCase(Locale.ROOT)
                 )
                 startActivity(moveIntent)
             }

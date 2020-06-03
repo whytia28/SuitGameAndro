@@ -3,8 +3,8 @@ package com.example.gamesuit
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Toast
-import androidx.core.view.TintableBackgroundView
 import kotlinx.android.synthetic.main.activity_area_main.*
 
 class AreaMain : AppCompatActivity() {
@@ -15,10 +15,10 @@ class AreaMain : AppCompatActivity() {
 
     }
 
-    var pilihanSatu: String = ""
-    var pilihanDua: String = ""
-    var namaPemain1: String = ""
-    var namaPemain2: String = ""
+    private var pilihanSatu: String? = ""
+    private var pilihanDua: String = ""
+    private var namaPemain1: String = ""
+    private var namaPemain2: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +71,7 @@ class AreaMain : AppCompatActivity() {
             }
             hasil.visibility = View.VISIBLE
         } else {
-            Toast.makeText(this, "Kedua pemain harus meilih", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Kedua pemain harus memilih", Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -82,5 +82,8 @@ class AreaMain : AppCompatActivity() {
         pilihanDua = ""
     }
 
-
+    fun onClick(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.fade)
+        batu1.startAnimation(animation)
+    }
 }
