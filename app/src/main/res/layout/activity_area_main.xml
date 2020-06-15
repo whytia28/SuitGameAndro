@@ -105,21 +105,6 @@
         app:layout_constraintStart_toStartOf="@id/kertas2"
         app:layout_constraintTop_toBottomOf="@id/kertas2" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/hasil"-->
-<!--        android:layout_width="256dp"-->
-<!--        android:layout_height="256dp"-->
-<!--        android:gravity="center"-->
-<!--        android:hint="@string/pemain_1_menang"-->
-<!--        android:textColor="#B10404"-->
-<!--        android:textSize="58sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:visibility="gone"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <Button
         android:id="@+id/main_lagi"
         android:layout_width="192dp"

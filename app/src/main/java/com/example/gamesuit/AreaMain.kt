@@ -1,12 +1,12 @@
 package com.example.gamesuit
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.animation.AnimationUtils
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_area_main.*
+import kotlinx.android.synthetic.main.custom_sialog.*
+import kotlinx.android.synthetic.main.custom_sialog.view.*
 
 class AreaMain : AppCompatActivity() {
 
@@ -66,35 +66,32 @@ class AreaMain : AppCompatActivity() {
     }
 
     private fun showResult() {
-        var pemenang : String = ""
+        val pemenang: String
         if (pilihanSatu != "" && pilihanDua != "") {
             val control = Controler()
             val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
-            if (hasilMain == "pemain 1 menang") {
-                pemenang = "$namaPemain1 MENANG"
-//                hasil.text = "$namaPemain1 MENANG"
+            pemenang = if (hasilMain == "pemain 1 menang") {
+                "$namaPemain1 MENANG!!!"
             } else if (hasilMain == "pemain 2 menang") {
-                pemenang = "$namaPemain2 MENANG"
-//                hasil.text = "$namaPemain2 MENANG"
+                "$namaPemain2 MENANG!!!"
             } else {
-                pemenang = "DRAW"
-//                hasil.text = "DRAW"
+                "DRAW!!!"
             }
-//            hasil.visibility = View.VISIBLE
             val builder = AlertDialog.Builder(this)
-            builder.setTitle("HASIL")
-            builder.setMessage("$pemenang")
-            builder.setPositiveButton("OK", null)
-            builder.create().show()
+            val dialog = layoutInflater.inflate(R.layout.custom_sialog, null)
+            builder.setView(dialog)
+            builder.setCustomTitle(hasil)
+            dialog.selamat.text = pemenang
+            val dialogMessage = builder.create()
+            dialogMessage.show()
+            dialog.btn_exit.setOnClickListener {
+                dialogMessage.dismiss()
+            }
         }
-//        else {
-//            Toast.makeText(this, "Kedua pemain harus memilih", Toast.LENGTH_SHORT).show()
-//        }
 
     }
 
     private fun startNew() {
-//        hasil.visibility = View.GONE
         pilihanSatu = ""
         pilihanDua = ""
         batu1.foreground = null
