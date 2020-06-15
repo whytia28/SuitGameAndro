@@ -11,8 +11,8 @@ import kotlinx.android.synthetic.main.custom_sialog.view.*
 class AreaMain : AppCompatActivity() {
 
     companion object {
-        const val EXTRA_NAME1 = "extra_name1"
-        const val EXTRA_NAME2 = "extra_name2"
+        const val NAMA_PEMAIN_1 = "extra_name1"
+        const val NAMA_PEMAIN_2 = "extra_name2"
 
     }
 
@@ -25,8 +25,8 @@ class AreaMain : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_area_main)
 
-        namaPemain1 = intent.getStringExtra(EXTRA_NAME1)
-        namaPemain2 = intent.getStringExtra(EXTRA_NAME2)
+        namaPemain1 = intent.getStringExtra(NAMA_PEMAIN_1)
+        namaPemain2 = intent.getStringExtra(NAMA_PEMAIN_2)
         pemain1.text = namaPemain1
         pemain2.text = namaPemain2
 
@@ -86,6 +86,7 @@ class AreaMain : AppCompatActivity() {
             dialogMessage.show()
             dialog.btn_exit.setOnClickListener {
                 dialogMessage.dismiss()
+                startNew()
             }
         }
 

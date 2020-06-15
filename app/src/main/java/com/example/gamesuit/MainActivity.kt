@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_start -> {
                 val moveIntent = Intent(this@MainActivity, AreaMain::class.java)
                 moveIntent.putExtra(
-                    AreaMain.EXTRA_NAME1,
+                    AreaMain.NAMA_PEMAIN_1,
                     inputpemain1.text.toString().toUpperCase(Locale.ROOT)
                 )
                 moveIntent.putExtra(
-                    AreaMain.EXTRA_NAME2,
+                    AreaMain.NAMA_PEMAIN_2,
                     inputpemain2.text.toString().toUpperCase(Locale.ROOT)
                 )
                 startActivity(moveIntent)
