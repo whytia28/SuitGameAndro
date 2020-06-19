@@ -16,10 +16,10 @@ class AreaMain : AppCompatActivity() {
 
     }
 
-    private var pilihanSatu: String? = ""
+    private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
-    private var namaPemain1: String = ""
-    private var namaPemain2: String = ""
+    private var namaPemain1: String? = ""
+    private var namaPemain2: String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,9 +60,6 @@ class AreaMain : AppCompatActivity() {
             showResult()
             gunting2.foreground = resources.getDrawable(R.drawable.overlay, null)
         }
-        main_lagi.setOnClickListener {
-            startNew()
-        }
     }
 
     private fun showResult() {
@@ -70,12 +67,16 @@ class AreaMain : AppCompatActivity() {
         if (pilihanSatu != "" && pilihanDua != "") {
             val control = Controler()
             val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
-            pemenang = if (hasilMain == "pemain 1 menang") {
-                "$namaPemain1 MENANG!!!"
-            } else if (hasilMain == "pemain 2 menang") {
-                "$namaPemain2 MENANG!!!"
-            } else {
-                "DRAW!!!"
+            pemenang = when (hasilMain) {
+                "pemain 1 menang" -> {
+                    "$namaPemain1 MENANG!!!"
+                }
+                "pemain 2 menang" -> {
+                    "$namaPemain2 MENANG!!!"
+                }
+                else -> {
+                    "DRAW!!!"
+                }
             }
             val builder = AlertDialog.Builder(this)
             val dialog = layoutInflater.inflate(R.layout.custom_sialog, null)
