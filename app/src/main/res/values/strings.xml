@@ -16,4 +16,16 @@
     <string name="draw">DRAW</string>
     <string name="reset">reset</string>
     <string name="main_lagi">Main Lagi</string>
+    <string name="logo_game">Logo Game</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pemain_lawan_pemain">Pemain lawan pemain</string>
+    <string name="slide_1_of_3">Slide 1 of 3</string>
+    <string name="slide_2_of_3">Slide 2 of 3</string>
+    <string name="next_slide">Next slide</string>
+    <string name="slide_3_of_3">Slide 3 of 3</string>
+    <string name="silakan_input_nama">Silakan input nama</string>
+    <string name="bermain_suit_melawan_sesama_pemain">Bermain suit melawan sesama pemain</string>
+    <string name="bermain_melawan_komputer">Bermain melawan komputer</string>
+    <string name="masukkan_namamu_di_bawah">Masukkan namamu di bawah</string>
 </resources>
