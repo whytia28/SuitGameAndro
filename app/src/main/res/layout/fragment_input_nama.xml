@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".welcome.PemainFragment">
 
 
@@ -27,8 +28,9 @@
         android:layout_marginTop="10dp"
         android:text="@string/masukkan_namamu_di_bawah"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/profil"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/profil"
+        app:layout_constraintStart_toStartOf="@id/profil"
         app:layout_constraintTop_toBottomOf="@id/profil" />
 
     <EditText
@@ -36,10 +38,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="@id/keterangan"
+        android:hint="@string/silakan_input_nama"
         app:layout_constraintEnd_toEndOf="@id/keterangan"
+        app:layout_constraintStart_toStartOf="@id/keterangan"
         app:layout_constraintTop_toBottomOf="@id/keterangan"
-        android:hint="@string/silakan_input_nama" />
+        android:autofillHints="Nama"
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/slide"

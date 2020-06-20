@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".welcome.PemainFragment">
 
 
@@ -24,11 +25,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="@string/bermain_suit_melawan_sesama_pemain"
         android:textSize="20sp"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="@id/pemain"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/pemain"
+        app:layout_constraintStart_toStartOf="@id/pemain"
         app:layout_constraintTop_toBottomOf="@id/pemain" />
 
     <TextView

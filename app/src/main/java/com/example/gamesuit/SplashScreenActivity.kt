@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.gamesuit.welcome.WelcomeActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +14,7 @@ class SplashScreenActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     this@SplashScreenActivity,
-                    WelcomeActivity::class.java
+                    MainActivity::class.java
                 )
             )
         }, 3000)

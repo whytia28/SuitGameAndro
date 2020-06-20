@@ -28,4 +28,7 @@
     <string name="bermain_suit_melawan_sesama_pemain">Bermain suit melawan sesama pemain</string>
     <string name="bermain_melawan_komputer">Bermain melawan komputer</string>
     <string name="masukkan_namamu_di_bawah">Masukkan namamu di bawah</string>
+    <string name="pemain_vs_pemain">Pemain vs Pemain</string>
+    <string name="pemain_vs_cpu">Pemain vs CPU</string>
+    <string name="cpu">CPU</string>
 </resources>

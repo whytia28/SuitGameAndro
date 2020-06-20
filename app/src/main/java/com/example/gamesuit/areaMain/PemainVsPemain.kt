@@ -1,14 +1,16 @@
-package com.example.gamesuit
+package com.example.gamesuit.areaMain
 
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_area_main.*
-import kotlinx.android.synthetic.main.custom_sialog.*
-import kotlinx.android.synthetic.main.custom_sialog.view.*
+import com.example.gamesuit.logic.Controler
+import com.example.gamesuit.R
+import kotlinx.android.synthetic.main.activity_pemain_vs_pemain.*
+import kotlinx.android.synthetic.main.custom_alert_dialog.*
+import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
 
-class AreaMain : AppCompatActivity() {
+class PemainVsPemain : AppCompatActivity() {
 
     companion object {
         const val NAMA_PEMAIN_1 = "extra_name1"
@@ -16,14 +18,14 @@ class AreaMain : AppCompatActivity() {
 
     }
 
-    private var pilihanSatu: String? = ""
+    private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
-    private var namaPemain1: String = ""
-    private var namaPemain2: String = ""
+    private var namaPemain1: String? = ""
+    private var namaPemain2: String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_area_main)
+        setContentView(R.layout.activity_pemain_vs_pemain)
 
         namaPemain1 = intent.getStringExtra(NAMA_PEMAIN_1)
         namaPemain2 = intent.getStringExtra(NAMA_PEMAIN_2)
@@ -70,15 +72,19 @@ class AreaMain : AppCompatActivity() {
         if (pilihanSatu != "" && pilihanDua != "") {
             val control = Controler()
             val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
-            pemenang = if (hasilMain == "pemain 1 menang") {
-                "$namaPemain1 MENANG!!!"
-            } else if (hasilMain == "pemain 2 menang") {
-                "$namaPemain2 MENANG!!!"
-            } else {
-                "DRAW!!!"
+            pemenang = when (hasilMain) {
+                "pemain 1 menang" -> {
+                    "$namaPemain1 MENANG!!!"
+                }
+                "pemain 2 menang" -> {
+                    "$namaPemain2 MENANG!!!"
+                }
+                else -> {
+                    "DRAW!!!"
+                }
             }
             val builder = AlertDialog.Builder(this)
-            val dialog = layoutInflater.inflate(R.layout.custom_sialog, null)
+            val dialog = layoutInflater.inflate(R.layout.custom_alert_dialog, null)
             builder.setView(dialog)
             builder.setCustomTitle(hasil)
             dialog.selamat.text = pemenang
