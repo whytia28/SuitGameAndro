@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.gamesuit.areaMain.PemainVsCpu
 import com.example.gamesuit.areaMain.PemainVsPemain
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         btn_exit.setOnClickListener(this)
         pemainvspemain.setOnClickListener(this)
+        pemainvscpu.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -23,8 +26,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val moveIntent = Intent(this@MainActivity, PemainVsPemain::class.java)
                 startActivity(moveIntent)
             }
+            R.id.pemainvscpu -> {
+                val moveIntent = Intent(this@MainActivity, PemainVsCpu::class.java)
+                startActivity(moveIntent)
+            }
             R.id.btn_exit -> {
-                finish()
+                exitProcess(1)
             }
         }
     }

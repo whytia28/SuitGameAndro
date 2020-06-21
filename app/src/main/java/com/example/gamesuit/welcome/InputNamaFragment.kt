@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gamesuit.MainActivity
 import com.example.gamesuit.R
-import com.example.gamesuit.areaMain.PemainVsPemain.Companion.NAMA_PEMAIN_1
+import com.example.gamesuit.areaMain.PemainVsPemain
 import kotlinx.android.synthetic.main.fragment_input_nama.*
 import java.util.*
 
@@ -26,7 +26,7 @@ class InputNamaFragment : Fragment() {
         next.setOnClickListener {
             val intent = Intent(activity, MainActivity::class.java)
             intent.putExtra(
-                NAMA_PEMAIN_1,
+                PemainVsPemain.NAMA_PEMAIN_1,
                 input_nama.text.toString().toUpperCase(Locale.ROOT)
             )
             startActivity(intent)
