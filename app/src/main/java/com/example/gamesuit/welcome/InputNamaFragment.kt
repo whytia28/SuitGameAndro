@@ -1,11 +1,16 @@
 package com.example.gamesuit.welcome
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.gamesuit.MainActivity
 import com.example.gamesuit.R
+import com.example.gamesuit.areaMain.PemainVsPemain.Companion.NAMA_PEMAIN_1
+import kotlinx.android.synthetic.main.fragment_input_nama.*
+import java.util.*
 
 class InputNamaFragment : Fragment() {
     override fun onCreateView(
@@ -14,5 +19,17 @@ class InputNamaFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_input_nama, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        next.setOnClickListener {
+            val intent = Intent(activity, MainActivity::class.java)
+            intent.putExtra(
+                NAMA_PEMAIN_1,
+                input_nama.text.toString().toUpperCase(Locale.ROOT)
+            )
+            startActivity(intent)
+        }
     }
 }

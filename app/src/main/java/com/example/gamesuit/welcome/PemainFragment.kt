@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.gamesuit.R
+import kotlinx.android.synthetic.main.fragment_pemain.*
 
 
 class PemainFragment : Fragment() {
@@ -15,5 +16,18 @@ class PemainFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pemain, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        next.setOnClickListener {
+            val mCpuFragment = CpuFragment()
+            val mFragmentManager = fragmentManager
+            mFragmentManager?.beginTransaction()?.apply {
+               replace(R.id.frame_container, mCpuFragment, CpuFragment::class.java.simpleName)
+                   .addToBackStack(null)
+                   .commit()
+            }
+        }
     }
 }

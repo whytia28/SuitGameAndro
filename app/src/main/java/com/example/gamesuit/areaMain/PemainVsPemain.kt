@@ -14,23 +14,18 @@ class PemainVsPemain : AppCompatActivity() {
 
     companion object {
         const val NAMA_PEMAIN_1 = "extra_name1"
-        const val NAMA_PEMAIN_2 = "extra_name2"
-
     }
 
     private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
     private var namaPemain1: String? = ""
-    private var namaPemain2: String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pemain_vs_pemain)
 
         namaPemain1 = intent.getStringExtra(NAMA_PEMAIN_1)
-        namaPemain2 = intent.getStringExtra(NAMA_PEMAIN_2)
         pemain1.text = namaPemain1
-        pemain2.text = namaPemain2
 
         batu1.setOnClickListener {
             pilihanSatu = "batu"
@@ -77,7 +72,7 @@ class PemainVsPemain : AppCompatActivity() {
                     "$namaPemain1 MENANG!!!"
                 }
                 "pemain 2 menang" -> {
-                    "$namaPemain2 MENANG!!!"
+                    "Pemain 2 MENANG!!!"
                 }
                 else -> {
                     "DRAW!!!"
