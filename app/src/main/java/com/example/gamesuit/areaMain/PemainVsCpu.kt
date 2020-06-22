@@ -11,9 +11,6 @@ import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
 
 class PemainVsCpu : AppCompatActivity() {
 
-    companion object {
-        const val NAMA_PEMAIN_1 = "extra_name1"
-    }
 
     private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
@@ -23,8 +20,6 @@ class PemainVsCpu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pemain_vs_cpu)
 
-        namaPemain1 = intent.getStringExtra(NAMA_PEMAIN_1)
-        pemain1.text = namaPemain1
 
         batu1.setOnClickListener {
             pilihanSatu = "batu"
@@ -68,7 +63,7 @@ class PemainVsCpu : AppCompatActivity() {
                     "$namaPemain1 MENANG!!!"
                 }
                 "pemain 2 menang" -> {
-                    "Pemain 2 MENANG!!!"
+                    "CPU MENANG!!!"
                 }
                 else -> {
                     "DRAW!!!"

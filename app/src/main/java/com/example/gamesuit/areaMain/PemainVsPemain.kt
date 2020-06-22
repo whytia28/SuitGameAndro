@@ -1,6 +1,7 @@
 package com.example.gamesuit.areaMain
 
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -12,10 +13,6 @@ import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
 
 class PemainVsPemain : AppCompatActivity() {
 
-    companion object {
-        const val NAMA_PEMAIN_1 = "extra_name1"
-    }
-
     private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
     private var namaPemain1: String? = ""
@@ -24,8 +21,6 @@ class PemainVsPemain : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pemain_vs_pemain)
 
-        namaPemain1 = intent.getStringExtra(NAMA_PEMAIN_1)
-        pemain1.text = namaPemain1
 
         batu1.setOnClickListener {
             pilihanSatu = "batu"
@@ -56,9 +51,6 @@ class PemainVsPemain : AppCompatActivity() {
             pilihanDua = "gunting"
             showResult()
             gunting2.foreground = resources.getDrawable(R.drawable.overlay, null)
-        }
-        main_lagi.setOnClickListener {
-            startNew()
         }
     }
 

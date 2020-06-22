@@ -109,17 +109,5 @@
             app:layout_constraintStart_toStartOf="@id/kertas2"
             app:layout_constraintTop_toBottomOf="@id/kertas2" />
 
-        <Button
-            android:id="@+id/main_lagi"
-            android:layout_width="192dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ripple_effect"
-            android:text="@string/main_lagi"
-            android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gunting1" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
