@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
 
 class PemainVsCpu : AppCompatActivity() {
 
-
     private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
     private var namaPemain1: String? = ""

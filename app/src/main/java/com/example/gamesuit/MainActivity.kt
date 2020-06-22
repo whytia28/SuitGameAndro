@@ -1,5 +1,6 @@
 package com.example.gamesuit
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -7,23 +8,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.gamesuit.areaMain.PemainVsCpu
 import com.example.gamesuit.areaMain.PemainVsPemain
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.system.exitProcess
+class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    companion object {
-        const val NAMA_PEMAIN_1 = "extra_name1"
-    }
+    var namaPemain: String? = ""
 
-    var namaPemain1: String? = ""
-
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        namaPemain1 = intent.getStringExtra(NAMA_PEMAIN_1)
-        tv_pemain.text = "$namaPemain1 vs PEMAIN"
-        tv_cpu.text = "$namaPemain1 vs CPU"
+        namaPemain = intent.getStringExtra("nama pemain")
+        tv_pemain.text = "$namaPemain vs PEMAIN"
+        tv_cpu.text = "$namaPemain vs CPU"
 
         btn_exit.setOnClickListener(this)
         pemainvspemain.setOnClickListener(this)
@@ -41,9 +38,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(moveIntent)
             }
             R.id.btn_exit -> {
-                exitProcess(1)
+                finish()
             }
         }
     }
-
 }

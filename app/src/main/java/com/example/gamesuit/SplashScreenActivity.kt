@@ -18,6 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
                     WelcomeActivity::class.java
                 )
             )
+            finish()
         }, 3000)
     }
 }

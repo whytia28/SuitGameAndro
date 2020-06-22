@@ -2,11 +2,11 @@ package com.example.gamesuit.areaMain
 
 
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import com.example.gamesuit.logic.Controler
+import androidx.appcompat.app.AppCompatActivity
 import com.example.gamesuit.R
+import com.example.gamesuit.logic.Controler
 import kotlinx.android.synthetic.main.activity_pemain_vs_pemain.*
 import kotlinx.android.synthetic.main.custom_alert_dialog.*
 import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
@@ -15,7 +15,6 @@ class PemainVsPemain : AppCompatActivity() {
 
     private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
-    private var namaPemain1: String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +60,7 @@ class PemainVsPemain : AppCompatActivity() {
             val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
             pemenang = when (hasilMain) {
                 "pemain 1 menang" -> {
-                    "$namaPemain1 MENANG!!!"
+                    "nama MENANG!!!"
                 }
                 "pemain 2 menang" -> {
                     "Pemain 2 MENANG!!!"

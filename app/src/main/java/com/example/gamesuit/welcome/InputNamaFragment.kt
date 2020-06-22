@@ -16,7 +16,6 @@ class InputNamaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_input_nama, container, false)
     }
 
@@ -25,10 +24,10 @@ class InputNamaFragment : Fragment() {
         next.setOnClickListener {
             val intent = Intent(activity, MainActivity::class.java)
             intent.putExtra(
-                MainActivity.NAMA_PEMAIN_1,
-                input_nama.text.toString().toUpperCase(Locale.ROOT)
-            )
+                "nama pemain", input_nama.text.toString().toUpperCase(Locale.ROOT)
+                )
             startActivity(intent)
+            activity?.finish()
         }
     }
 }

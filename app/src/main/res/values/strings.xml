@@ -31,4 +31,6 @@
     <string name="pemain_vs_pemain">Pemain vs Pemain</string>
     <string name="pemain_vs_cpu">Pemain vs CPU</string>
     <string name="cpu">CPU</string>
+    <string name="vs_pemain">vs PEMAIN</string>
+    <string name="vs_cpu">vs CPU</string>
 </resources>
