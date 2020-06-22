@@ -3,6 +3,7 @@ package com.example.gamesuit.areaMain
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gamesuit.MainActivity
 import com.example.gamesuit.R
 import com.example.gamesuit.logic.Controler
 import kotlinx.android.synthetic.main.activity_pemain_vs_cpu.*
@@ -13,12 +14,13 @@ class PemainVsCpu : AppCompatActivity() {
 
     private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
-    private var namaPemain1: String? = ""
+    private var nama = MainActivity.namaPemain
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pemain_vs_cpu)
 
+        pemain1.text = nama
 
         batu1.setOnClickListener {
             pilihanSatu = "batu"
@@ -59,7 +61,7 @@ class PemainVsCpu : AppCompatActivity() {
             val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
             pemenang = when (hasilMain) {
                 "pemain 1 menang" -> {
-                    "$namaPemain1 MENANG!!!"
+                    "$nama MENANG!!!"
                 }
                 "pemain 2 menang" -> {
                     "CPU MENANG!!!"

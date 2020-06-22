@@ -5,6 +5,7 @@ package com.example.gamesuit.areaMain
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gamesuit.MainActivity
 import com.example.gamesuit.R
 import com.example.gamesuit.logic.Controler
 import kotlinx.android.synthetic.main.activity_pemain_vs_pemain.*
@@ -15,11 +16,13 @@ class PemainVsPemain : AppCompatActivity() {
 
     private var pilihanSatu: String = ""
     private var pilihanDua: String = ""
+    private var nama = MainActivity.namaPemain
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pemain_vs_pemain)
 
+        pemain1.text = nama
 
         batu1.setOnClickListener {
             pilihanSatu = "batu"
@@ -60,7 +63,7 @@ class PemainVsPemain : AppCompatActivity() {
             val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
             pemenang = when (hasilMain) {
                 "pemain 1 menang" -> {
-                    "nama MENANG!!!"
+                    "$nama MENANG!!!"
                 }
                 "pemain 2 menang" -> {
                     "Pemain 2 MENANG!!!"

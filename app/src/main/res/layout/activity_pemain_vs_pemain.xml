@@ -39,7 +39,7 @@
             android:id="@+id/pemain2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/pemain2"
+            android:text="@string/pemain2"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/pemain1"
@@ -108,6 +108,20 @@
             android:src="@drawable/gunting"
             app:layout_constraintStart_toStartOf="@id/kertas2"
             app:layout_constraintTop_toBottomOf="@id/kertas2" />
+
+        <TextView
+            android:id="@+id/vs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vs"
+            android:textSize="64sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pemain1"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

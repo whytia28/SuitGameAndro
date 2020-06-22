@@ -10,8 +10,10 @@ import com.example.gamesuit.areaMain.PemainVsPemain
 import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
+    companion object {
+        var namaPemain: String? = ""
+    }
 
-    var namaPemain: String? = ""
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
