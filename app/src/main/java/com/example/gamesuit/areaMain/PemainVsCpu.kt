@@ -3,12 +3,14 @@ package com.example.gamesuit.areaMain
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import com.example.gamesuit.MainActivity
 import com.example.gamesuit.R
 import com.example.gamesuit.logic.Controler
 import kotlinx.android.synthetic.main.activity_pemain_vs_cpu.*
 import kotlinx.android.synthetic.main.custom_alert_dialog.*
 import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
+
 
 class PemainVsCpu : AppCompatActivity() {
 
@@ -23,51 +25,47 @@ class PemainVsCpu : AppCompatActivity() {
         pemain1.text = nama
 
         batu1.setOnClickListener {
-            pilihanSatu = "batu"
+            pilihanSatu = Controler.pilihanGame[0]
             showResult()
             batu1.foreground = resources.getDrawable(R.drawable.overlay, null)
         }
         kertas1.setOnClickListener {
-            pilihanSatu = "kertas"
+            pilihanSatu = Controler.pilihanGame[1]
             showResult()
             kertas1.foreground = resources.getDrawable(R.drawable.overlay, null)
         }
         gunting1.setOnClickListener {
-            pilihanSatu = "gunting"
+            pilihanSatu = Controler.pilihanGame[2]
             showResult()
             gunting1.foreground = resources.getDrawable(R.drawable.overlay, null)
-        }
-        batu2.setOnClickListener {
-            pilihanDua = "batu"
-            showResult()
-            batu2.foreground = resources.getDrawable(R.drawable.overlay, null)
-        }
-        kertas2.setOnClickListener {
-            pilihanDua = "kertas"
-            showResult()
-            kertas2.foreground = resources.getDrawable(R.drawable.overlay, null)
-        }
-        gunting2.setOnClickListener {
-            pilihanDua = "gunting"
-            showResult()
-            gunting2.foreground = resources.getDrawable(R.drawable.overlay, null)
         }
     }
 
     private fun showResult() {
         val pemenang: String
-        if (pilihanSatu != "" && pilihanDua != "") {
+        if (pilihanSatu != "") {
             val control = Controler()
-            val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
+            val hasilMain = control.caraMainCpu(pilihanSatu)
             pemenang = when (hasilMain) {
                 "pemain 1 menang" -> {
                     "$nama MENANG!!!"
                 }
-                "pemain 2 menang" -> {
+                "CPU 2 menang" -> {
                     "CPU MENANG!!!"
                 }
                 else -> {
                     "DRAW!!!"
+                }
+            }
+            when (Controler.pilihanCpu) {
+                Controler.pilihanGame[0] -> {
+                    batu2.foreground = resources.getDrawable(R.drawable.overlay, null)
+                }
+                Controler.pilihanGame[1] -> {
+                    kertas2.foreground = resources.getDrawable(R.drawable.overlay, null)
+                }
+                Controler.pilihanGame[2] -> {
+                    gunting2.foreground = resources.getDrawable(R.drawable.overlay, null)
                 }
             }
             val builder = AlertDialog.Builder(this)
@@ -76,13 +74,17 @@ class PemainVsCpu : AppCompatActivity() {
             builder.setCustomTitle(hasil)
             dialog.selamat.text = pemenang
             val dialogMessage = builder.create()
-            dialogMessage.show()
+            val handler = Handler()
+            handler.postDelayed({
+                kotlin.run {
+                    dialogMessage.show()
+                }
+            }, 1000)
             dialog.btn_exit.setOnClickListener {
                 dialogMessage.dismiss()
                 startNew()
             }
         }
-
     }
 
     private fun startNew() {
@@ -95,5 +97,4 @@ class PemainVsCpu : AppCompatActivity() {
         gunting1.foreground = null
         gunting2.foreground = null
     }
-
 }
