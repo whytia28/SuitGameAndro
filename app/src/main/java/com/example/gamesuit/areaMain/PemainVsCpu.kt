@@ -29,11 +29,13 @@ class PemainVsCpu : AppCompatActivity() {
             showResult()
             batu1.foreground = resources.getDrawable(R.drawable.overlay, null)
         }
+
         kertas1.setOnClickListener {
             pilihanSatu = Controler.pilihanGame[1]
             showResult()
             kertas1.foreground = resources.getDrawable(R.drawable.overlay, null)
         }
+
         gunting1.setOnClickListener {
             pilihanSatu = Controler.pilihanGame[2]
             showResult()
@@ -61,9 +63,11 @@ class PemainVsCpu : AppCompatActivity() {
                 Controler.pilihanGame[0] -> {
                     batu2.foreground = resources.getDrawable(R.drawable.overlay, null)
                 }
+
                 Controler.pilihanGame[1] -> {
                     kertas2.foreground = resources.getDrawable(R.drawable.overlay, null)
                 }
+
                 Controler.pilihanGame[2] -> {
                     gunting2.foreground = resources.getDrawable(R.drawable.overlay, null)
                 }

@@ -10,14 +10,14 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
 
         val mFragmentManager = supportFragmentManager
+        val fragmentTransaction = mFragmentManager.beginTransaction()
         val mPemainFragment = PemainFragment()
-        val fragment = mFragmentManager.findFragmentByTag(PemainFragment::class.java.simpleName)
 
-        if (fragment !is PemainFragment) {
-            mFragmentManager
-                .beginTransaction()
-                .add(R.id.frame_container, mPemainFragment, PemainFragment::class.java.simpleName)
-                .commit()
-        }
+        fragmentTransaction.add(
+            R.id.frame_container,
+            mPemainFragment,
+            PemainFragment::class.java.simpleName
+        )
+        fragmentTransaction.commit()
     }
 }
