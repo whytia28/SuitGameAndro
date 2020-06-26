@@ -37,5 +37,4 @@
         android:background="@drawable/ripple_effect"
         android:text="@string/ok" />
 
-
 </LinearLayout>

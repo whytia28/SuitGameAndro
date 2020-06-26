@@ -8,7 +8,6 @@
     tools:context=".SplashScreenActivity">
 
     <ImageView
-        android:id="@+id/logo_awal"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:src="@drawable/logo2"

@@ -1,23 +1,13 @@
 <resources>
     <string name="app_name">GameSuit</string>
-    <string name="game_suit">Match Game</string>
     <string name="logo">logo</string>
-    <string name="mulai">START</string>
     <string name="keluar">EXIT</string>
     <string name="batu">rock</string>
     <string name="kertas">paper</string>
     <string name="gunting">scissor</string>
     <string name="pemain_1">Player 1</string>
     <string name="pemain2">PLAYER 2</string>
-    <string name="input_nama_pemain_1">Input player name 1</string>
-    <string name="input_nama_pemain_2">Input player name 2</string>
-    <string name="pemain_1_menang">player 1 win</string>
-    <string name="pemain_2_menang">player 2 win</string>
-    <string name="draw">DRAW</string>
-    <string name="reset">reset</string>
-    <string name="main_lagi">Play again</string>
     <string name="logo_game">Logo Game</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="pemain_lawan_pemain">Player vs player</string>
     <string name="slide_1_of_3" translatable="false">Slide 1 of 3</string>
     <string name="slide_2_of_3" translatable="false">Slide 2 of 3</string>
