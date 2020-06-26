@@ -63,13 +63,13 @@ class PemainVsPemain : AppCompatActivity() {
             val hasilMain = control.caraMain(pilihanSatu, pilihanDua)
             pemenang = when (hasilMain) {
                 "pemain 1 menang" -> {
-                    "$nama MENANG!!!"
+                    getString(R.string.selamat_kamu_menang, nama)
                 }
                 "pemain 2 menang" -> {
-                    "Pemain 2 MENANG!!!"
+                    getString(R.string.selamat_pemain_2_menang)
                 }
                 else -> {
-                    "DRAW!!!"
+                    getString(R.string.hasil_draw)
                 }
             }
             val builder = AlertDialog.Builder(this)

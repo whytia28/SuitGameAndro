@@ -1,6 +1,5 @@
 package com.example.gamesuit
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -15,14 +14,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
     }
 
 
-    @SuppressLint("SetTextI18n")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         namaPemain = intent.getStringExtra("nama pemain")
-        tv_pemain.text = "$namaPemain vs PEMAIN"
-        tv_cpu.text = "$namaPemain vs CPU"
+        tv_pemain.text = getString(R.string.vs_pemain, namaPemain)
+        tv_cpu.text = getString(R.string.vs_cpu, namaPemain)
 
         btn_exit.setOnClickListener(this)
         pemainvspemain.setOnClickListener(this)

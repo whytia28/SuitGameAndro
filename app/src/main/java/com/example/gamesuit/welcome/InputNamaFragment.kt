@@ -32,7 +32,7 @@ class InputNamaFragment : Fragment() {
                 "nama pemain", input_nama.text.toString().toUpperCase(Locale.ROOT)
             )
             if (nama.isEmpty()) {
-                Toast.makeText(activity, "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, getString(R.string.nama_tidak_boleh_kosong), Toast.LENGTH_SHORT).show()
             } else {
                 startActivity(intent)
                 activity?.finish()

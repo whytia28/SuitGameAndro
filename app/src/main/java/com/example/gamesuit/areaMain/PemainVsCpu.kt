@@ -50,13 +50,13 @@ class PemainVsCpu : AppCompatActivity() {
             val hasilMain = control.caraMainCpu(pilihanSatu)
             pemenang = when (hasilMain) {
                 "pemain 1 menang" -> {
-                    "$nama MENANG!!!"
+                    getString(R.string.selamat_kamu_menang, nama)
                 }
                 "CPU 2 menang" -> {
-                    "CPU MENANG!!!"
+                    getString(R.string.cpu_menang)
                 }
                 else -> {
-                    "DRAW!!!"
+                    getString(R.string.hasil_draw)
                 }
             }
             when (Controler.pilihanCpu) {

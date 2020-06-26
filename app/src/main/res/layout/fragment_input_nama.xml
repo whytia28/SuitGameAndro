@@ -29,6 +29,7 @@
         android:text="@string/masukkan_namamu_di_bawah"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="@id/profil"
         app:layout_constraintStart_toStartOf="@id/profil"
         app:layout_constraintTop_toBottomOf="@id/profil" />
@@ -37,7 +38,7 @@
         android:id="@+id/input_nama"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:hint="@string/silakan_input_nama"
         app:layout_constraintEnd_toEndOf="@id/keterangan"
         app:layout_constraintStart_toStartOf="@id/keterangan"
